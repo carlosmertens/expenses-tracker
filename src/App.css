@@ -1,4 +1,4 @@
-#root {
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -53,6 +53,7 @@ table {
   box-shadow: 0 0 30px gray;
 }
 
-/* tfoot {
-  text-align: left;
+th,
+tfoot {
+  background-color: #545454;
 } */

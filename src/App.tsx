@@ -1,8 +1,8 @@
 import './App.css';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
-import ExpenseList from './components/ExpenseList';
 import { useState } from 'react';
+import ExpenseList from './components/ExpenseList';
 
 function App() {
   const [expenses, setExpenses] = useState([
@@ -17,20 +17,20 @@ function App() {
   };
 
   return (
-    <>
-      <div>
+    <div className='h-screen bg-slate-700 text-white flex flex-col justify-center items-center gap-4'>
+      <div className='flex gap-x-6'>
         <a href='https://vitejs.dev' target='_blank'>
-          <img src={viteLogo} className='logo' alt='Vite logo' />
+          <img src={viteLogo} className='h-28' alt='Vite logo' />
         </a>
         <a href='https://react.dev' target='_blank'>
-          <img src={reactLogo} className='logo react' alt='React logo' />
+          <img src={reactLogo} className='h-28' alt='React logo' />
         </a>
       </div>
-      <h1>Expenses Tracker</h1>
+      <h1 className='text-5xl mt-8'>Expenses Tracker</h1>
       <div className='container'>
         <ExpenseList expenses={expenses} onDelete={handleDelete} />
       </div>
-    </>
+    </div>
   );
 }
 
