@@ -1,8 +1,21 @@
+import './App.css';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
-import './App.css';
+import ExpenseList from './components/ExpenseList';
+import { useState } from 'react';
 
 function App() {
+  const [expenses, setExpenses] = useState([
+    { id: 1, description: 'aaa', amount: 10, category: 'Utilities' },
+    { id: 2, description: 'bbb', amount: 10, category: 'Household' },
+    { id: 3, description: 'ccc', amount: 10, category: 'Groceries' },
+    { id: 4, description: 'ddd', amount: 10, category: 'Utilities' },
+  ]);
+
+  const handleDelete = (id: number) => {
+    setExpenses(expenses.filter((expense) => expense.id !== id));
+  };
+
   return (
     <>
       <div>
@@ -14,7 +27,9 @@ function App() {
         </a>
       </div>
       <h1>Expenses Tracker</h1>
-      <div className='container'></div>
+      <div className='container'>
+        <ExpenseList expenses={expenses} onDelete={handleDelete} />
+      </div>
     </>
   );
 }

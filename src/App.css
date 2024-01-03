@@ -40,3 +40,19 @@
 .read-the-docs {
   color: #888;
 }
+
+table,
+td,
+th {
+  border: 2px solid white;
+  border-collapse: collapse;
+  padding: 10px;
+}
+
+table {
+  box-shadow: 0 0 30px gray;
+}
+
+/* tfoot {
+  text-align: left;
+} */
