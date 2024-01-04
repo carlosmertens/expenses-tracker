@@ -13,7 +13,7 @@ const ExpenseList = ({ expenses, onDelete }: Props) => {
   if (expenses.length === 0) return null;
 
   return (
-    <table className='border-2 mx-auto'>
+    <table className='border-2 shadow-lg shadow-white'>
       <thead className=''>
         <tr className=''>
           <th className='border-2 p-2.5'>Description</th>
@@ -30,7 +30,7 @@ const ExpenseList = ({ expenses, onDelete }: Props) => {
             <td className='border-2 p-2.5'>{expense.category}</td>
             <td className='border-2 p-2.5'>
               <button
-                className='bg-purple-700 py-1 px-2 border-2 border-transparent rounded-lg hover:border-2 hover:border-orange-600'
+                className='bg-indigo-700 py-1 px-2 border-2 border-transparent rounded-lg hover:border-2 hover:border-orange-600'
                 onClick={() => onDelete(expense.id)}>
                 Delete
               </button>
