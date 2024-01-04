@@ -1,8 +1,9 @@
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
 import { useState } from 'react';
 import ExpenseList from './components/ExpenseList';
 import ExpenseFilter from './components/ExpenseFilter';
+import Header from './components/Header';
+import AppLayout from './components/layout/AppLayout';
+import Main from './components/layout/Main';
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState('');
@@ -27,25 +28,13 @@ function App() {
   console.log(selectedCategory);
 
   return (
-    <div className='h-screen bg-slate-700 text-white flex flex-col justify-center items-center gap-4'>
-      <div className='flex gap-x-6'>
-        <a href='https://vitejs.dev' target='_blank'>
-          <img
-            src={viteLogo}
-            className='h-28 hover:drop-shadow-2xl'
-            alt='Vite logo'
-          />
-        </a>
-        <a href='https://react.dev' target='_blank'>
-          <img src={reactLogo} className='h-28' alt='React logo' />
-        </a>
-      </div>
-      <h1 className='text-5xl mt-12 mb-4'>Expenses Tracker</h1>
-      <div className='flex flex-col justify-center items-center gap-4'>
+    <AppLayout>
+      <Header />
+      <Main>
         <ExpenseFilter onSelectCategory={handleSelect} />
         <ExpenseList expenses={showExpenses} onDelete={handleDelete} />
-      </div>
-    </div>
+      </Main>
+    </AppLayout>
   );
 }
 
