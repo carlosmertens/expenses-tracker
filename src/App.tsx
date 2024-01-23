@@ -2,8 +2,8 @@ import { useState } from 'react';
 import ExpenseList from './components/ExpenseList';
 import ExpenseFilter from './components/ExpenseFilter';
 import Header from './components/Header';
-import AppLayout from './components/layout/AppLayout';
-import Main from './components/layout/Main';
+import AppLayout from './layout/AppLayout.tsx';
+import MainLayout from './layout/MainLayout.tsx';
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState('');
@@ -25,15 +25,14 @@ function App() {
   const handleSelect = (category: string) => {
     setSelectedCategory(category);
   };
-  console.log(selectedCategory);
 
   return (
     <AppLayout>
       <Header />
-      <Main>
+      <MainLayout>
         <ExpenseFilter onSelectCategory={handleSelect} />
         <ExpenseList expenses={showExpenses} onDelete={handleDelete} />
-      </Main>
+      </MainLayout>
     </AppLayout>
   );
 }
