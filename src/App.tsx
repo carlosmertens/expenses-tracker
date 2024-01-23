@@ -4,14 +4,12 @@ import ExpenseFilter from './components/ExpenseFilter';
 import Header from './components/Header';
 import AppLayout from './layout/AppLayout.tsx';
 import MainLayout from './layout/MainLayout.tsx';
+import ExpenseForm from './components/ExpenseForm.tsx';
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState('');
   const [expenses, setExpenses] = useState([
     { id: 1, description: 'aaa', amount: 10, category: 'Utilities' },
-    { id: 2, description: 'bbb', amount: 10, category: 'Household' },
-    { id: 3, description: 'ccc', amount: 10, category: 'Groceries' },
-    { id: 4, description: 'ddd', amount: 10, category: 'Utilities' },
   ]);
 
   const showExpenses = selectedCategory
@@ -30,6 +28,11 @@ function App() {
     <AppLayout>
       <Header />
       <MainLayout>
+        <ExpenseForm
+          onSubmit={(data) =>
+            setExpenses([...expenses, { ...data, id: expenses.length + 1 }])
+          }
+        />
         <ExpenseFilter onSelectCategory={handleSelect} />
         <ExpenseList expenses={showExpenses} onDelete={handleDelete} />
       </MainLayout>
