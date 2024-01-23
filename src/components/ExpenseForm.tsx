@@ -4,6 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { CheckCircleIcon } from '@heroicons/react/20/solid';
 import { categories } from '../data';
 
+// Create a schema-base validation with zod
 const schema = z.object({
   description: z.string().min(1, { message: 'Requires!' }).max(25),
   amount: z
@@ -16,6 +17,7 @@ const schema = z.object({
   }),
 });
 
+//
 type ExpenseData = z.infer<typeof schema>;
 
 interface Props {
@@ -23,12 +25,14 @@ interface Props {
 }
 
 const ExpenseForm = ({ onSubmit }: Props) => {
+  // Create react-hook-form state manager
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
   } = useForm<ExpenseData>({ resolver: zodResolver(schema) });
+
   return (
     <form
       onSubmit={handleSubmit((data) => {

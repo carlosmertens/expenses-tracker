@@ -15,9 +15,6 @@ const ExpenseFilter = ({ onSelectCategory }: Props) => {
           {category}
         </option>
       ))}
-      <option value='Groceries'>Groceries</option>
-      <option value='Household'>Household</option>
-      <option value='Utilities'>Utilities</option>
     </select>
   );
 };

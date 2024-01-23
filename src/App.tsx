@@ -1,28 +1,19 @@
 import { useState } from 'react';
 import ExpenseList from './components/ExpenseList';
-import ExpenseFilter from './components/ExpenseFilter';
 import Header from './components/Header';
 import AppLayout from './layout/AppLayout.tsx';
 import MainLayout from './layout/MainLayout.tsx';
 import ExpenseForm from './components/ExpenseForm.tsx';
 
+export interface Expense {
+  id: number;
+  description: string;
+  amount: number;
+  category: string;
+}
+
 function App() {
-  const [selectedCategory, setSelectedCategory] = useState('');
-  const [expenses, setExpenses] = useState([
-    { id: 1, description: 'aaa', amount: 10, category: 'Utilities' },
-  ]);
-
-  const showExpenses = selectedCategory
-    ? expenses.filter((expense) => expense.category === selectedCategory)
-    : expenses;
-
-  const handleDelete = (id: number) => {
-    setExpenses(expenses.filter((expense) => expense.id !== id));
-  };
-
-  const handleSelect = (category: string) => {
-    setSelectedCategory(category);
-  };
+  const [expenses, setExpenses] = useState<Expense[]>([]);
 
   return (
     <AppLayout>
@@ -33,8 +24,13 @@ function App() {
             setExpenses([...expenses, { ...data, id: expenses.length + 1 }])
           }
         />
-        <ExpenseFilter onSelectCategory={handleSelect} />
-        <ExpenseList expenses={showExpenses} onDelete={handleDelete} />
+
+        <ExpenseList
+          expenses={expenses}
+          onDelete={(id) =>
+            setExpenses(expenses.filter((expense) => expense.id !== id))
+          }
+        />
       </MainLayout>
     </AppLayout>
   );
