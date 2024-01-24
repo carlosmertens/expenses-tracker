@@ -27,6 +27,7 @@
     "option": "All Categories"
   },
   "ExpenseList": {
+    "starting": "Start adding your expenses...",
     "th": {
       "items": "Items",
       "costs": "Costs",

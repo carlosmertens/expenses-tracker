@@ -42,31 +42,27 @@ const ExpenseForm = ({ onSubmit }: Props) => {
       })}
       className='flex flex-col justify-center items-center gap-4'>
       <div>
-        <label
-          htmlFor='item'
-          className='block text-sm font-medium leading-6 text-gray-300'>
+        <label htmlFor='item' className='block text-sm font-medium leading-6'>
           {texts.ExpenseForm.labels.item}
         </label>
         <input
           {...register('description')}
           type='text'
           id='item'
-          className='block w-48 rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
+          className='w-48 rounded-md border-0 py-1.5 px-2 text-slate-900 shadow-sm ring-1 ring-inset ring-lime-300 focus:ring-2 focus:ring-inset focus:ring-lime-600 sm:text-sm sm:leading-6'
         />
         {errors.description && <p>{errors.description.message}</p>}
       </div>
 
       <div>
-        <label
-          htmlFor='amount'
-          className='block text-sm font-medium leading-6 text-gray-300'>
+        <label htmlFor='amount' className='block text-sm font-medium leading-6'>
           {texts.ExpenseForm.labels.cost}
         </label>
         <input
           {...register('amount', { valueAsNumber: true })}
           type='number'
           id='amount'
-          className='block w-48 rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
+          className='w-48 rounded-md border-0 py-1.5 px-2 text-slate-900 shadow-sm ring-1 ring-inset ring-lime-300 focus:ring-2 focus:ring-inset focus:ring-lime-600 sm:text-sm sm:leading-6'
         />
         {errors.amount && <p>{errors.amount.message}</p>}
       </div>
@@ -74,13 +70,13 @@ const ExpenseForm = ({ onSubmit }: Props) => {
       <div>
         <label
           htmlFor='category'
-          className='block text-sm font-medium leading-6 text-gray-300'>
+          className='block text-sm font-medium leading-6'>
           {texts.ExpenseForm.labels.category}
         </label>
         <select
           {...register('category')}
           id='category'
-          className='block w-48 rounded-md border-0 py-1.5 px-2 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6'>
+          className='w-48 rounded-md border-0 py-1.5 px-2 text-slate-900 shadow-sm ring-1 ring-inset ring-lime-300 focus:ring-2 focus:ring-inset focus:ring-lime-600 sm:text-sm sm:leading-6'>
           <option value=''>{texts.ExpenseForm.option}</option>
           {categories.map((category) => (
             <option key={category} value={category}>
@@ -88,12 +84,12 @@ const ExpenseForm = ({ onSubmit }: Props) => {
             </option>
           ))}
         </select>
-        {errors.category && <p className=''>{errors.category.message}</p>}
+        {errors.category && <p>{errors.category.message}</p>}
       </div>
 
       <button
         type='submit'
-        className='mt-2 inline-flex items-center gap-x-1.5 rounded-md bg-lime-700 px-2.5 py-1.5 text-md font-semibold text-slate-200 shadow-sm hover:bg-lime-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-600'>
+        className='mt-2 inline-flex items-center gap-2 rounded-xl bg-lime-700 px-2.5 py-1.5 text-md font-semibold shadow-lg hover:bg-lime-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-600'>
         <CheckCircleIcon className='-ml-0.5 h-5 w-5' aria-hidden='true' />
         {texts.ExpenseForm.button}
       </button>
