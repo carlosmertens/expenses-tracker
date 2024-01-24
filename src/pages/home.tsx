@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 const Home = () => {
   return (
     <AppLayout>
-      <main className='h-full flex flex-col justify-center items-center  gap-8 text-center px-4'>
+      <main className='h-screen flex flex-col justify-center items-center  gap-8 text-center px-4'>
         <h1 className='text-5xl'>
           <span className='text-6xl'>Supermarket</span> Expenses Tracker
         </h1>
