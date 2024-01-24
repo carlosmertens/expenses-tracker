@@ -1,7 +1,7 @@
 const Header = () => {
   return (
-    <header className='flex flex-col justify-center items-center'>
-      <h1 className='text-5xl mt-12 mb-4'>Expenses Tracker</h1>
+    <header className='fixed top-0 left-0 w-full h-12 bg-green-900 flex justify-center items-center'>
+      <p className=''>To buy or not to buy!</p>
     </header>
   );
 };

@@ -6,7 +6,7 @@ interface Props {
 
 const AppLayout = ({ children }: Props) => {
   return (
-    <div className='h-screen bg-gradient-to-r from-sky-800 to-indigo-800'>
+    <div className='h-screen bg-gradient-to-r from-green-800 to-cyan-800 text-slate-300'>
       {children}
     </div>
   );
