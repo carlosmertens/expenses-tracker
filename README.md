@@ -35,16 +35,23 @@ export default {
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
 
-## Tailwindcss
+## Tailwindcss & Heroicons
 
-- [Website](https://tailwindcss.com)
-- [Documentation](https://tailwindcss.com/docs/installation)
+- [Tailwindcss website](https://tailwindcss.com)
+- [Tailwindcss documentation](https://tailwindcss.com/docs/installation)
+- [Heroicons website](https://heroicons.com/)
 
-## React Router
+## React Router & Zod
 
-- [Website](https://reactrouter.com/en/main)
+The react-router-dom package contains bindings for using React Router in web applications
+
+- [Reaxt Router website](https://reactrouter.com/en/main)
+
+Zod is a TypeScript-first schema validation with static type inference
+
+- [Zod website](https://zod.dev/)
+- [Colin Hacks README](https://github.com/colinhacks/zod)
 
 ## React Hooks
 
 - useState
-- useContext
