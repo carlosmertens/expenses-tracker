@@ -1,0 +1,43 @@
+{
+  "Home": {
+    "h1": {
+      "span": "Supermarket",
+      "content": "Expenses Tracker"
+    },
+    "p": {
+      "span": "Tired of the mystery behind your grocery bills?",
+      "content": "We are here to revolutionize the way you manage your supermarket spending."
+    },
+    "NavLink": "Start Tracking"
+  },
+  "Header": {
+    "p": "To buy or not to buy!"
+  },
+  "ExpenseForm": {
+    "labels": {
+      "item": "Item:",
+      "cost": "Cost:",
+      "category": "Category:"
+    },
+    "option": "Choose Category",
+    "button": "Add Item"
+  },
+  "ExpenseFilter": {
+    "label": "Filter Category:",
+    "option": "All Categories"
+  },
+  "ExpenseList": {
+    "th": {
+      "items": "Items",
+      "costs": "Costs",
+      "categories": "Categories"
+    },
+    "td": "Total"
+  },
+  "Footer": {
+    "p": {
+      "span": "Full Disclosure: ",
+      "content": "Unfortunately we are not able to help you tracking what partners and childrens add to your shopping cart! 👻"
+    }
+  }
+}

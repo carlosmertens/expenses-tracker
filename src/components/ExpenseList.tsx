@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Expense } from '../pages/expenses';
 import ExpenseFilter from './ExpenseFilter';
+import texts from '../languages/english.json';
 
 interface Props {
   expenses: Expense[];
@@ -24,9 +25,11 @@ const ExpenseList = ({ expenses, onDelete }: Props) => {
       <table className='border-2 shadow-lg shadow-white'>
         <thead className=''>
           <tr className=''>
-            <th className='border-2 p-2.5'>Description</th>
-            <th className='border-2 p-2.5'>Amount</th>
-            <th className='border-2 p-2.5'>Category</th>
+            <th className='border-2 p-2.5'>{texts.ExpenseList.th.items}</th>
+            <th className='border-2 p-2.5'>{texts.ExpenseList.th.costs}</th>
+            <th className='border-2 p-2.5'>
+              {texts.ExpenseList.th.categories}
+            </th>
             <th className='border-2 p-2.5'></th>
           </tr>
         </thead>
@@ -38,9 +41,9 @@ const ExpenseList = ({ expenses, onDelete }: Props) => {
               <td className='border-2 p-2.5'>{expense.category}</td>
               <td className='border-2 p-2.5'>
                 <button
-                  className='bg-red-600 py-1 px-2 border-2 border-transparent rounded-lg hover:border-2 hover:border-orange-600'
+                  className='py-1 px-2 border-2 border-red-400 text-red-400 rounded-lg hover:border-2 hover:bg-red-400 hover:text-slate-900'
                   onClick={() => onDelete(expense.id)}>
-                  -
+                  X
                 </button>
               </td>
             </tr>
@@ -48,12 +51,9 @@ const ExpenseList = ({ expenses, onDelete }: Props) => {
         </tbody>
         <tfoot>
           <tr className='text-center font-bold'>
-            <td className='border-2 p-2.5'>Total</td>
+            <td className='border-2 p-2.5'>{texts.ExpenseList.td}</td>
             <td className='border-2 p-2.5'>
-              $
-              {expenses
-                .reduce((acc, expense) => expense.amount + acc, 0)
-                .toFixed(2)}
+              € {expenses.reduce((acc, expense) => expense.amount + acc, 0)}
             </td>
             <td></td>
             <td></td>
