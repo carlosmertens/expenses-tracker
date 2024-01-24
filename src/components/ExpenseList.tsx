@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Expense } from '../App';
+import { Expense } from '../pages/expenses';
 import ExpenseFilter from './ExpenseFilter';
 
 interface Props {
