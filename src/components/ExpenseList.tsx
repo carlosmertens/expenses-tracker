@@ -17,7 +17,7 @@ const ExpenseList = ({ expenses, onDelete }: Props) => {
     return <p className='text-gray-400'>Start adding your expenses...</p>;
 
   return (
-    <>
+    <div className='mb-10 flex flex-col items-center gap-4 '>
       <ExpenseFilter
         onSelectCategory={(category) => setSelectedCategory(category)}
       />
@@ -60,7 +60,7 @@ const ExpenseList = ({ expenses, onDelete }: Props) => {
           </tr>
         </tfoot>
       </table>
-    </>
+    </div>
   );
 };
 

@@ -1,14 +1,11 @@
 import { ArrowRightCircleIcon } from '@heroicons/react/20/solid';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import AppLayout from '../layout/AppLayout';
 import { NavLink } from 'react-router-dom';
 
 const Home = () => {
   return (
-    <div className='h-screen flex flex-col justify-center items-center gap-20 bg-gradient-to-r from-green-800 to-cyan-800 text-slate-300'>
-      <Header />
-
-      <main className='flex flex-col gap-8 items-center text-center px-4'>
+    <AppLayout>
+      <main className='h-full flex flex-col justify-center items-center  gap-8 text-center px-4'>
         <h1 className='text-5xl'>
           <span className='text-6xl'>Supermarket</span> Expenses Tracker
         </h1>
@@ -27,8 +24,7 @@ const Home = () => {
           Start Tracking
         </NavLink>
       </main>
-      <Footer />
-    </div>
+    </AppLayout>
   );
 };
 

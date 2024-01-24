@@ -1,4 +1,6 @@
 import { ReactNode } from 'react';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 interface Props {
   children: ReactNode;
@@ -6,8 +8,10 @@ interface Props {
 
 const AppLayout = ({ children }: Props) => {
   return (
-    <div className='h-screen bg-gradient-to-r from-green-800 to-cyan-800 text-slate-300'>
+    <div className='min-h-screen bg-gradient-to-r from-green-800 to-cyan-800 text-slate-300'>
+      <Header />
       {children}
+      <Footer />
     </div>
   );
 };
