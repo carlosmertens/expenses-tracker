@@ -40,7 +40,7 @@ const ExpenseList = ({ expenses, onDelete }: Props) => {
                 <button
                   className='bg-red-600 py-1 px-2 border-2 border-transparent rounded-lg hover:border-2 hover:border-orange-600'
                   onClick={() => onDelete(expense.id)}>
-                  X
+                  -
                 </button>
               </td>
             </tr>
