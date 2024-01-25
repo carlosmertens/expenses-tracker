@@ -1,16 +1,16 @@
 import { useContext, useState } from 'react';
 import { TrashIcon } from '@heroicons/react/20/solid';
-import { Expense } from '../pages/expenses';
 import ExpenseFilter from './ExpenseFilter';
 import TextsContext from '../contexts/textsContext';
+import { ExpenseType } from '../interfaces';
 
 interface Props {
-  expenses: Expense[];
+  expenses: ExpenseType[];
   onDelete: (id: number) => void;
 }
 
 const ExpenseList = ({ expenses, onDelete }: Props) => {
-  const texts = useContext(TextsContext);
+  const { texts } = useContext(TextsContext);
   const [selectedCategory, setSelectedCategory] = useState('');
 
   const displayExpenses = selectedCategory
@@ -36,8 +36,8 @@ const ExpenseList = ({ expenses, onDelete }: Props) => {
         <tbody>
           {displayExpenses.map((expense) => (
             <tr key={expense.id} className='text-center'>
-              <td className='border-2 p-2.5 '>{expense.description}</td>
-              <td className='border-2 p-2.5'>{expense.amount}</td>
+              <td className='border-2 p-2.5 '>{expense.item}</td>
+              <td className='border-2 p-2.5'>{expense.cost}</td>
               <td className='border-2 p-2.5'>{expense.category}</td>
               <td className='border-2 p-2.5'>
                 <button
@@ -53,7 +53,7 @@ const ExpenseList = ({ expenses, onDelete }: Props) => {
           <tr className='text-center font-bold'>
             <td className='border-2 p-2.5'>{texts.ExpenseList.td}</td>
             <td className='border-2 p-2.5'>
-              € {expenses.reduce((acc, expense) => expense.amount + acc, 0)}
+              € {expenses.reduce((acc, expense) => expense.cost + acc, 0)}
             </td>
             <td></td>
             <td></td>

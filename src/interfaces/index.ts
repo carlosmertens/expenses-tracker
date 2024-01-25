@@ -1,4 +1,12 @@
+export interface ExpenseType {
+  id: number;
+  item: string;
+  cost: number;
+  category: string;
+}
+
 export interface TextsType {
+  id: string;
   Home: {
     h1: {
       span: string;

@@ -3,7 +3,7 @@ import AppLayout from '../layout/AppLayout';
 import TextsContext from '../contexts/textsContext';
 
 const NotFound = () => {
-  const texts = useContext(TextsContext);
+  const { texts } = useContext(TextsContext);
   return (
     <AppLayout>
       <main className='h-screen flex flex-col justify-center items-center'>

@@ -8,8 +8,8 @@ import TextsContext from '../contexts/textsContext';
 
 // Create a schema-base validation with zod
 const schema = z.object({
-  description: z.string().min(1, { message: 'Requires!' }).max(25),
-  amount: z
+  item: z.string().min(1, { message: 'Requires!' }).max(25),
+  cost: z
     .number({ invalid_type_error: 'Requires!' })
     .positive()
     .min(0.1, { message: 'Requires!' })
@@ -19,22 +19,22 @@ const schema = z.object({
   }),
 });
 
-//
-type ExpenseData = z.infer<typeof schema>;
+// Infer data type from the newly create z schema
+type FormData = z.infer<typeof schema>;
 
 interface Props {
-  onSubmit: (data: ExpenseData) => void;
+  onSubmit: (data: FormData) => void;
 }
 
 const ExpenseForm = ({ onSubmit }: Props) => {
-  const texts = useContext(TextsContext);
+  const { texts } = useContext(TextsContext);
   // Create react-hook-form state manager
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<ExpenseData>({ resolver: zodResolver(schema) });
+  } = useForm<FormData>({ resolver: zodResolver(schema) });
 
   return (
     <form
@@ -48,25 +48,25 @@ const ExpenseForm = ({ onSubmit }: Props) => {
           {texts.ExpenseForm.labels.item}
         </label>
         <input
-          {...register('description')}
+          {...register('item')}
           type='text'
           id='item'
           className='w-48 rounded-md border-0 py-1.5 px-2 text-slate-900 shadow-sm ring-1 ring-inset ring-lime-300 focus:ring-2 focus:ring-inset focus:ring-lime-600 sm:text-sm sm:leading-6'
         />
-        {errors.description && <p>{errors.description.message}</p>}
+        {errors.item && <p>{errors.item.message}</p>}
       </div>
 
       <div>
-        <label htmlFor='amount' className='block text-sm font-medium leading-6'>
+        <label htmlFor='cost' className='block text-sm font-medium leading-6'>
           {texts.ExpenseForm.labels.cost}
         </label>
         <input
-          {...register('amount', { valueAsNumber: true })}
+          {...register('cost', { valueAsNumber: true })}
           type='number'
-          id='amount'
+          id='cost'
           className='w-48 rounded-md border-0 py-1.5 px-2 text-slate-900 shadow-sm ring-1 ring-inset ring-lime-300 focus:ring-2 focus:ring-inset focus:ring-lime-600 sm:text-sm sm:leading-6'
         />
-        {errors.amount && <p>{errors.amount.message}</p>}
+        {errors.cost && <p>{errors.cost.message}</p>}
       </div>
 
       <div>

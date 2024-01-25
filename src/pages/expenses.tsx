@@ -2,16 +2,10 @@ import { useState } from 'react';
 import AppLayout from '../layout/AppLayout';
 import ExpenseForm from '../components/ExpenseForm';
 import ExpenseList from '../components/ExpenseList';
-
-export interface Expense {
-  id: number;
-  description: string;
-  amount: number;
-  category: string;
-}
+import { ExpenseType } from '../interfaces';
 
 const Expenses = () => {
-  const [expenses, setExpenses] = useState<Expense[]>([]);
+  const [expenses, setExpenses] = useState<ExpenseType[]>([]);
 
   return (
     <AppLayout>

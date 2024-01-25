@@ -1,6 +1,11 @@
 import { createContext } from 'react';
 import { TextsType } from '../interfaces';
 
-const TextsContext = createContext({} as TextsType);
+interface TextsContextType {
+  texts: TextsType;
+  handleClick: () => void;
+}
+
+const TextsContext = createContext<TextsContextType>({} as TextsContextType);
 
 export default TextsContext;

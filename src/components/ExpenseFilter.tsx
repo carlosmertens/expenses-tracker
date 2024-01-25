@@ -7,7 +7,7 @@ interface Props {
 }
 
 const ExpenseFilter = ({ onSelectCategory }: Props) => {
-  const texts = useContext(TextsContext);
+  const { texts } = useContext(TextsContext);
 
   return (
     <div>

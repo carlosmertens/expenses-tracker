@@ -1,4 +1,5 @@
 export const english = {
+  id: 'en',
   Home: {
     h1: {
       span: 'Supermarket',
@@ -40,7 +41,7 @@ export const english = {
     p: {
       span: 'Full Disclosure: ',
       content:
-        'Unfortunately we are not able to help you tracking what partners and childrens add to your shopping cart! 👻',
+        'Unfortunately we are not able to help you tracking what partners and children add to your shopping cart! 👻',
     },
   },
   NotFound: {

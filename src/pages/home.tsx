@@ -5,7 +5,7 @@ import { useContext } from 'react';
 import TextsContext from '../contexts/textsContext';
 
 const Home = () => {
-  const texts = useContext(TextsContext);
+  const { texts } = useContext(TextsContext);
 
   return (
     <AppLayout>
