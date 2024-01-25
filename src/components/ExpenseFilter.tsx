@@ -1,11 +1,14 @@
+import { useContext } from 'react';
 import { categories } from '../data';
-import texts from '../languages/english.json';
+import TextsContext from '../contexts/textsContext';
 
 interface Props {
   onSelectCategory: (category: string) => void;
 }
 
 const ExpenseFilter = ({ onSelectCategory }: Props) => {
+  const texts = useContext(TextsContext);
+
   return (
     <div>
       <label htmlFor='filter' className='block text-sm font-medium leading-6'>

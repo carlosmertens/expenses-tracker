@@ -1,9 +1,12 @@
 import { ArrowRightCircleIcon } from '@heroicons/react/20/solid';
 import AppLayout from '../layout/AppLayout';
 import { NavLink } from 'react-router-dom';
-import texts from '../languages/english.json';
+import { useContext } from 'react';
+import TextsContext from '../contexts/textsContext';
 
 const Home = () => {
+  const texts = useContext(TextsContext);
+
   return (
     <AppLayout>
       <main className='h-screen flex flex-col justify-center items-center  gap-8 text-center px-4'>

@@ -1,14 +1,16 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { TrashIcon } from '@heroicons/react/20/solid';
 import { Expense } from '../pages/expenses';
 import ExpenseFilter from './ExpenseFilter';
-import texts from '../languages/english.json';
+import TextsContext from '../contexts/textsContext';
 
 interface Props {
   expenses: Expense[];
   onDelete: (id: number) => void;
 }
+
 const ExpenseList = ({ expenses, onDelete }: Props) => {
+  const texts = useContext(TextsContext);
   const [selectedCategory, setSelectedCategory] = useState('');
 
   const displayExpenses = selectedCategory

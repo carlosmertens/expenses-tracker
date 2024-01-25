@@ -40,5 +40,8 @@
       "span": "Full Disclosure: ",
       "content": "Unfortunately we are not able to help you tracking what partners and childrens add to your shopping cart! 👻"
     }
+  },
+  "NotFound": {
+    "h2": "404 - Page Not Found"
   }
 }

@@ -3,7 +3,8 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { CheckCircleIcon } from '@heroicons/react/20/solid';
 import { categories } from '../data';
-import texts from '../languages/english.json';
+import { useContext } from 'react';
+import TextsContext from '../contexts/textsContext';
 
 // Create a schema-base validation with zod
 const schema = z.object({
@@ -26,6 +27,7 @@ interface Props {
 }
 
 const ExpenseForm = ({ onSubmit }: Props) => {
+  const texts = useContext(TextsContext);
   // Create react-hook-form state manager
   const {
     register,

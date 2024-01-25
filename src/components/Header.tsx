@@ -1,8 +1,11 @@
 import { HomeIcon } from '@heroicons/react/20/solid';
+import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import texts from '../languages/english.json';
+import TextsContext from '../contexts/textsContext';
 
 const Header = () => {
+  const texts = useContext(TextsContext);
+
   return (
     <header className='fixed top-0 left-0 w-full py-2 bg-green-900 flex justify-between items-center px-4'>
       <NavLink
