@@ -10,11 +10,12 @@ const Expenses = () => {
   return (
     <AppLayout>
       <main className='flex flex-col items-center py-16'>
-        <div className='mb-10'>
+        <div className='mb-12 mt-2'>
           <ExpenseForm
             onSubmit={(data) =>
               setExpenses([...expenses, { ...data, id: expenses.length + 1 }])
             }
+            handleClear={() => setExpenses([])}
           />
         </div>
 

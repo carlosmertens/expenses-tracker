@@ -8,7 +8,7 @@ interface Props {
 
 const AppLayout = ({ children }: Props) => {
   return (
-    <div className='min-h-screen bg-gradient-to-r from-green-800 to-cyan-800 text-slate-200 font-serif'>
+    <div className='min-h-screen bg-gradient-to-r from-green-800 to-cyan-800 text-slate-200 font-serif text-xs md:text-lg'>
       <Header />
       {children}
       <Footer />

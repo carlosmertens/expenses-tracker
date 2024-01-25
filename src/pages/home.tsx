@@ -10,13 +10,13 @@ const Home = () => {
   return (
     <AppLayout>
       <main className='h-screen flex flex-col justify-center items-center  gap-8 text-center px-4'>
-        <h1 className='text-4xl md:text-5xl'>
-          <span className='block text-5xl md:text-6xl font-bold tracking-widest'>
+        <h1 className='text-2xl md:text-5xl'>
+          <span className='block text-4xl md:text-6xl font-bold tracking-widest'>
             {texts.Home.h1.span}
           </span>
           {texts.Home.h1.content}
         </h1>
-        <p className='text-lg'>
+        <p className='text-base'>
           <span className='block italic'>{texts.Home.p.span}</span>
           {texts.Home.p.content}
         </p>

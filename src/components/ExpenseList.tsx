@@ -25,8 +25,8 @@ const ExpenseList = ({ expenses, onDelete }: Props) => {
         onSelectCategory={(category) => setSelectedCategory(category)}
       />
       <table className='border-2 shadow-md shadow-white'>
-        <thead className=''>
-          <tr className=''>
+        <thead className='uppercase'>
+          <tr>
             <th className='border-2 p-2'>{texts.ExpenseList.th.items}</th>
             <th className='border-2 p-2'>{texts.ExpenseList.th.costs}</th>
             <th className='border-2 p-2'>{texts.ExpenseList.th.categories}</th>
@@ -51,7 +51,7 @@ const ExpenseList = ({ expenses, onDelete }: Props) => {
         </tbody>
         <tfoot>
           <tr className='text-center font-bold'>
-            <td className='border-2 p-2.5'>{texts.ExpenseList.td}</td>
+            <td className='border-2 p-2.5 uppercase'>{texts.ExpenseList.td}</td>
             <td className='border-2 p-2.5'>
               € {expenses.reduce((acc, expense) => expense.cost + acc, 0)}
             </td>

@@ -24,9 +24,10 @@ type FormData = z.infer<typeof schema>;
 
 interface Props {
   onSubmit: (data: FormData) => void;
+  handleClear: () => void;
 }
 
-const ExpenseForm = ({ onSubmit }: Props) => {
+const ExpenseForm = ({ onSubmit, handleClear }: Props) => {
   const { texts } = useContext(TextsContext);
   // Create react-hook-form state manager
   const {
@@ -89,12 +90,22 @@ const ExpenseForm = ({ onSubmit }: Props) => {
         {errors.category && <p>{errors.category.message}</p>}
       </div>
 
-      <button
-        type='submit'
-        className='mt-2 inline-flex items-center gap-2 rounded-xl bg-lime-700 px-2.5 py-1.5 text-md font-semibold shadow-lg hover:bg-lime-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-600'>
-        <CheckCircleIcon className='-ml-0.5 h-5 w-5' aria-hidden='true' />
-        {texts.ExpenseForm.button}
-      </button>
+      <div className='flex gap-2'>
+        <button
+          type='submit'
+          className='mt-2 inline-flex items-center gap-2 rounded-xl bg-lime-700 px-2.5 py-1.5 text-md font-semibold shadow-lg hover:bg-lime-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-600'>
+          <CheckCircleIcon className='-ml-0.5 h-5 w-5' aria-hidden='true' />
+          {texts.ExpenseForm.button}
+        </button>
+
+        <button
+          onClick={handleClear}
+          type='button'
+          className='mt-2 inline-flex items-center gap-2 rounded-xl border-2 border-lime-700 px-2.5 py-1.5 text-md font-semibold shadow-lg hover:bg-lime-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-600'>
+          <CheckCircleIcon className='-ml-0.5 h-5 w-5' aria-hidden='true' />
+          Clear List
+        </button>
+      </div>
     </form>
   );
 };
