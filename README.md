@@ -1,4 +1,4 @@
-# Expenses Tracker App
+# Supermarket Expenses Tracker App
 
 This is a user-friendly and intuitive supermarket expenses tracker app designed to simplify your financial life.
 
@@ -18,39 +18,24 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-### Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-};
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
-
 ## Tailwindcss & Heroicons
 
 - [Tailwindcss website](https://tailwindcss.com)
 - [Tailwindcss documentation](https://tailwindcss.com/docs/installation)
 - [Heroicons website](https://heroicons.com/)
 
-## React Router & Zod
+## React Router
 
 The react-router-dom package contains bindings for using React Router in web applications
 
-- [Reaxt Router website](https://reactrouter.com/en/main)
+- [React Router website](https://reactrouter.com/en/main)
+
+## React Hook Form & Zod
+
+React Hook Form is a super light library that helps you manage your form and take care of the number of rerenders.
+
+- [React Hook Form website](https://react-hook-form.com/)
+- [react-hook-form package](https://www.npmjs.com/package/react-hook-form)
 
 Zod is a TypeScript-first schema validation with static type inference
 
@@ -60,3 +45,4 @@ Zod is a TypeScript-first schema validation with static type inference
 ## React Hooks
 
 - useState
+- useContext
