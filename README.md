@@ -1,8 +1,13 @@
 # Expenses Tracker App
 
-This is a user-friendly and intuitive expenses tracker app designed to simplify your financial life.
+This is a user-friendly and intuitive supermarket expenses tracker app designed to simplify your financial life.
 
-Trust me, we all need a good partner or an expenses tracker to have a free of debts life.
+Trust me, we all need a good partner or an expenses tracker to have a free of debts life and someone controlling what you put in the shooping cart every weekk.
+
+Who is the target intended in this app?
+
+- But my wife of course
+- Any one who has been using a calculator in their phone to track their budget at the supermarket.
 
 ## React + TypeScript + Vite
 
