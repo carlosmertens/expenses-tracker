@@ -15,6 +15,8 @@ function App() {
     setTexts(texts.id === 'en' ? german : english);
   };
 
+  // console.log('render app');
+
   return (
     <TextsContext.Provider value={{ texts, handleClick }}>
       <Routes>
