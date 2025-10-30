@@ -20,7 +20,6 @@ const languages = [
 const LanguageSelector = () => {
   const { handleClick } = useContext(TextsContext);
   const [selected, setSelected] = useState(languages[0]);
-  console.log(selected);
 
   interface IValues {
     id: string;
@@ -28,7 +27,6 @@ const LanguageSelector = () => {
   }
 
   const handleSelect = (value: IValues) => {
-    //
     setSelected(value);
     handleClick(value.id);
   };
