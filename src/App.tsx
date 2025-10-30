@@ -2,20 +2,18 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './pages/home.tsx';
 import Expenses from './pages/expenses.tsx';
 import NotFound from './pages/notFound.tsx';
-// import english from './languages/english.json';
 import { english } from './languages/english.ts';
 import { german } from './languages/german.ts';
+import { spanish } from './languages/spanish.ts';
 import TextsContext from './contexts/textsContext.ts';
 import { useState } from 'react';
 
 function App() {
   const [texts, setTexts] = useState(english);
 
-  const handleClick = () => {
-    setTexts(texts.id === 'en' ? german : english);
+  const handleClick = (id: string) => {
+    setTexts(id === 'en' ? english : id === 'de' ? german : spanish);
   };
-
-  // console.log('render app');
 
   return (
     <TextsContext.Provider value={{ texts, handleClick }}>

@@ -3,7 +3,7 @@ import { TextsType } from '../interfaces';
 
 interface TextsContextType {
   texts: TextsType;
-  handleClick: () => void;
+  handleClick: (id: string) => void;
 }
 
 const TextsContext = createContext<TextsContextType>({} as TextsContextType);
